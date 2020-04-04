@@ -11,6 +11,6 @@ namespace Domain
         public DateTime? Created { get; set; }
         public DateTime? Modified { get; set; }
         public int Active { get; set; }
-        public User User { get; set; }
+        public User ModificationUser { get; set; }
     }
 }

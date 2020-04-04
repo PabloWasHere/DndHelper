@@ -8,6 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Views.Characters;
+using Views.Spells;
+using Views.User;
 
 namespace Views
 {
@@ -22,12 +25,20 @@ namespace Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Character character = new Character();
-            dbContext.Characters.Add(character);
-            dbContext.SaveChanges();
+            UserList userList = new UserList();
+            userList.Show();
+        }
 
-            var characters = dbContext.Characters.ToList();
-            Console.WriteLine(characters.ToString());
+        private void btnCharacters_Click(object sender, EventArgs e)
+        {
+            CharacterList characterList = new CharacterList();
+            characterList.Show();
+        }
+
+        private void btnSpells_Click(object sender, EventArgs e)
+        {
+            SpellList spellList = new SpellList();
+            spellList.Show();
         }
     }
 }

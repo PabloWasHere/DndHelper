@@ -21,6 +21,7 @@ namespace Domain
         public int Charisma { get; set; }
 
         // Subrace
-        public Race SubRace { get; set; }
+        public virtual ICollection<Race> SubRaces { get; set; }
+        public virtual Race SuperRace { get; set; }
     }
 }

@@ -16,13 +16,18 @@ namespace Domain
         }
 
         public DbSet<User> Users { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<Permission> Permissions { get; set; }
         public DbSet<Character> Characters { get; set; }
         public DbSet<CharClass> Classes { get; set; }
         public DbSet<Race> Races { get; set; }
 
+        public DbSet<Spell> Spells { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Properties<DateTime>().Configure(c => c.HasColumnType("datetime2"));
         }
     }
 }

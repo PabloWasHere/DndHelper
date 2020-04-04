@@ -1,0 +1,9 @@
+Druid		- knows all spells, can prepare a few
+Cleric		- knows all spells, can prepare a few
+Bard		- learns spells by leveling, can cast any spell learned
+Paladin		- knows all spells, can prepare a few
+Sorcerer	- learns spells by leveling, can cast any spell learned
+Warlock		- learns spells by leveling, can cast any spell learned
+Wizard		- learns spells by adding them to the spellbook, can prepare spells from spellbook
+Ranger		- learns spells by leveling, can cast any spell learned
+Other		- Can't cast spells

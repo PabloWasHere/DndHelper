@@ -14,5 +14,7 @@ namespace Domain
         public DateTime? Created { get; set; }
         public DateTime? Modified { get; set; }
         public int Active { get; set; }
+
+        public virtual ICollection<Role> Roles { get; set; }
     }
 }

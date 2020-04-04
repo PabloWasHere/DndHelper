@@ -149,6 +149,7 @@
     <Compile Include="Race.cs" />
     <Compile Include="Role.cs" />
     <Compile Include="SimpleState.cs" />
+    <Compile Include="Spell.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>

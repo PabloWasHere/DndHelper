@@ -9,9 +9,10 @@ namespace Domain
     public class Character : SimpleState
     {
         public int ID { get; set; }
+        public virtual User Owner { get; set; }
         public string Name { get; set; }
-        public Race Race { get; set; }
-        public CharClass Class { get; set; }
+        public virtual Race Race { get; set; }
+        public virtual CharClass Class { get; set; }
         public int Level { get; set; }
         public int Experience { get; set; }
         public int MaxHp { get; set; }
@@ -19,7 +20,7 @@ namespace Domain
 
         public int Speed { get; set; }
         public int Proficiency { get; set; } // Depends on the level
-        public int Initiative { get; set; } // Dexterity modifier
+        //public int Initiative { get; set; } // Dexterity modifier
         public int ArmorClass { get; set; } // Default of 10
         public bool Inspiration { get; set; } // DM's choice
 
@@ -30,5 +31,7 @@ namespace Domain
         public int Intelligence { get; set; }
         public int Wisdom { get; set; }
         public int Charisma { get; set; }
+
+        public virtual ICollection<Spell> PreparedSpells { get; set; }
     }
 }
