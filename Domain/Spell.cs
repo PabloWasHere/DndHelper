@@ -21,5 +21,8 @@ namespace Domain
         public int Custom { get; set; } = 0;
         public virtual User Owner { get; set; }
         public virtual CharClass Class { get; set; }
+
+        public virtual ICollection<Character> PreparedCharacter { get; set; }
+        public virtual ICollection<Character> SpellbookCharacter { get; set; }
     }
 }

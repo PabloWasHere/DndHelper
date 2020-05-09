@@ -154,6 +154,7 @@
             this.Controls.Add(this.dgvCharacters);
             this.Name = "CharacterList";
             this.Text = "CharacterList";
+            this.Load += new System.EventHandler(this.CharacterList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCharacters)).EndInit();
             this.ResumeLayout(false);
 

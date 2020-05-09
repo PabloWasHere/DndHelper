@@ -40,5 +40,11 @@ namespace Views
             SpellList spellList = new SpellList();
             spellList.Show();
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            ManageSpells manageSpells = new ManageSpells(dbContext.Characters.SingleOrDefault(c => c.ID == 1));
+            manageSpells.Show();
+        }
     }
 }

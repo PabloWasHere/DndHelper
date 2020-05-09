@@ -86,6 +86,7 @@ namespace Views.Characters
                 Character selectedChar = characters.Find(u => u.ID == selectedId);
 
                 CharacterSheet characterSheet = new CharacterSheet(selectedChar);
+                characterSheet.Show();
             }
         }
 

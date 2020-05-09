@@ -33,5 +33,6 @@ namespace Domain
         public int Charisma { get; set; }
 
         public virtual ICollection<Spell> PreparedSpells { get; set; }
+        public virtual ICollection<Spell> Spellbook { get; set; }
     }
 }

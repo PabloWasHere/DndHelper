@@ -168,6 +168,12 @@
     <Compile Include="Characters\LevelUpDialog.Designer.cs">
       <DependentUpon>LevelUpDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Characters\ManageSpells.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Characters\ManageSpells.Designer.cs">
+      <DependentUpon>ManageSpells.cs</DependentUpon>
+    </Compile>
     <Compile Include="Characters\OverwritePropertyDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,6 +241,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Characters\LevelUpDialog.resx">
       <DependentUpon>LevelUpDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Characters\ManageSpells.resx">
+      <DependentUpon>ManageSpells.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Characters\OverwritePropertyDialog.resx">
       <DependentUpon>OverwritePropertyDialog.cs</DependentUpon>
