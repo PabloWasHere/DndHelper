@@ -409,6 +409,7 @@
             this.cbLevel.Name = "cbLevel";
             this.cbLevel.Size = new System.Drawing.Size(102, 24);
             this.cbLevel.TabIndex = 36;
+            this.cbLevel.SelectedIndexChanged += new System.EventHandler(this.cbLevel_SelectedIndexChanged);
             // 
             // label16
             // 

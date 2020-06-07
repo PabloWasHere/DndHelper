@@ -142,6 +142,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character.cs" />
+    <Compile Include="CharacterPreparedSpells.cs" />
+    <Compile Include="CharacterSpellbook.cs" />
     <Compile Include="CharClass.cs" />
     <Compile Include="DndHelperContext.cs" />
     <Compile Include="Permission.cs" />

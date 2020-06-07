@@ -168,7 +168,7 @@ namespace Views.Characters
             if (charClass != null)
             {
                 lblClassName.Text = charClass.Name;
-                lblHitDice.Text = "1d" + charClass.HitDice;
+                lblHitDice.Text = cbLevel.SelectedItem + "d" + charClass.HitDice;
             }
         }
 
@@ -327,6 +327,11 @@ namespace Views.Characters
                 nudCharisma.Value = character.Charisma;
             }
             updateAbilities = true;
+        }
+
+        private void cbLevel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FillClassInfo(chosenClass);
         }
     }
 }

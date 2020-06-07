@@ -22,7 +22,7 @@ namespace Domain
         public virtual User Owner { get; set; }
         public virtual CharClass Class { get; set; }
 
-        public virtual ICollection<Character> PreparedCharacter { get; set; }
-        public virtual ICollection<Character> SpellbookCharacter { get; set; }
+        public virtual IList<CharacterPreparedSpell> PreparedSpells { get; set; }
+        public virtual IList<CharacterSpellbook> Spellbook { get; set; }
     }
 }

@@ -29,23 +29,23 @@
         private void InitializeComponent()
         {
             this.dgvAddSpells = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.level = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.action = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dgvPreparedSpells = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dgvSpellbook = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewButtonColumn2 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.asId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asAction = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.psId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.psNivel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.psNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.psAction = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddSpells)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPreparedSpells)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSpellbook)).BeginInit();
@@ -57,10 +57,10 @@
             this.dgvAddSpells.AllowUserToDeleteRows = false;
             this.dgvAddSpells.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAddSpells.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.level,
-            this.name,
-            this.action});
+            this.asId,
+            this.asLevel,
+            this.asName,
+            this.asAction});
             this.dgvAddSpells.Location = new System.Drawing.Point(12, 41);
             this.dgvAddSpells.MultiSelect = false;
             this.dgvAddSpells.Name = "dgvAddSpells";
@@ -69,38 +69,6 @@
             this.dgvAddSpells.Size = new System.Drawing.Size(321, 442);
             this.dgvAddSpells.TabIndex = 0;
             this.dgvAddSpells.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAddSpells_CellClick);
-            // 
-            // id
-            // 
-            this.id.HeaderText = "Id";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            this.id.Width = 125;
-            // 
-            // level
-            // 
-            this.level.HeaderText = "Nivel";
-            this.level.MinimumWidth = 6;
-            this.level.Name = "level";
-            this.level.ReadOnly = true;
-            this.level.Width = 125;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Nombre";
-            this.name.MinimumWidth = 6;
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            this.name.Width = 125;
-            // 
-            // action
-            // 
-            this.action.HeaderText = "Accion";
-            this.action.MinimumWidth = 6;
-            this.action.Name = "action";
-            this.action.Width = 125;
             // 
             // label1
             // 
@@ -135,10 +103,10 @@
             this.dgvPreparedSpells.AllowUserToDeleteRows = false;
             this.dgvPreparedSpells.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPreparedSpells.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewButtonColumn1});
+            this.psId,
+            this.psNivel,
+            this.psNombre,
+            this.psAction});
             this.dgvPreparedSpells.Location = new System.Drawing.Point(368, 41);
             this.dgvPreparedSpells.MultiSelect = false;
             this.dgvPreparedSpells.Name = "dgvPreparedSpells";
@@ -146,38 +114,7 @@
             this.dgvPreparedSpells.RowTemplate.Height = 24;
             this.dgvPreparedSpells.Size = new System.Drawing.Size(321, 442);
             this.dgvPreparedSpells.TabIndex = 6;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            this.dataGridViewTextBoxColumn1.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nivel";
-            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 125;
-            // 
-            // dataGridViewButtonColumn1
-            // 
-            this.dataGridViewButtonColumn1.HeaderText = "Accion";
-            this.dataGridViewButtonColumn1.MinimumWidth = 6;
-            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
-            this.dataGridViewButtonColumn1.Width = 125;
+            this.dgvPreparedSpells.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPreparedSpells_CellClick);
             // 
             // dgvSpellbook
             // 
@@ -229,6 +166,72 @@
             this.dataGridViewButtonColumn2.Name = "dataGridViewButtonColumn2";
             this.dataGridViewButtonColumn2.Width = 125;
             // 
+            // asId
+            // 
+            this.asId.HeaderText = "Id";
+            this.asId.MinimumWidth = 6;
+            this.asId.Name = "asId";
+            this.asId.ReadOnly = true;
+            this.asId.Visible = false;
+            this.asId.Width = 125;
+            // 
+            // asLevel
+            // 
+            this.asLevel.HeaderText = "Nivel";
+            this.asLevel.MinimumWidth = 6;
+            this.asLevel.Name = "asLevel";
+            this.asLevel.ReadOnly = true;
+            this.asLevel.Width = 125;
+            // 
+            // asName
+            // 
+            this.asName.HeaderText = "Nombre";
+            this.asName.MinimumWidth = 6;
+            this.asName.Name = "asName";
+            this.asName.ReadOnly = true;
+            this.asName.Width = 125;
+            // 
+            // asAction
+            // 
+            this.asAction.HeaderText = "Accion";
+            this.asAction.MinimumWidth = 6;
+            this.asAction.Name = "asAction";
+            this.asAction.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.asAction.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.asAction.Width = 125;
+            // 
+            // psId
+            // 
+            this.psId.HeaderText = "Id";
+            this.psId.MinimumWidth = 6;
+            this.psId.Name = "psId";
+            this.psId.ReadOnly = true;
+            this.psId.Visible = false;
+            this.psId.Width = 125;
+            // 
+            // psNivel
+            // 
+            this.psNivel.HeaderText = "Nivel";
+            this.psNivel.MinimumWidth = 6;
+            this.psNivel.Name = "psNivel";
+            this.psNivel.ReadOnly = true;
+            this.psNivel.Width = 125;
+            // 
+            // psNombre
+            // 
+            this.psNombre.HeaderText = "Nombre";
+            this.psNombre.MinimumWidth = 6;
+            this.psNombre.Name = "psNombre";
+            this.psNombre.ReadOnly = true;
+            this.psNombre.Width = 125;
+            // 
+            // psAction
+            // 
+            this.psAction.HeaderText = "Accion";
+            this.psAction.MinimumWidth = 6;
+            this.psAction.Name = "psAction";
+            this.psAction.Width = 125;
+            // 
             // ManageSpells
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -254,22 +257,22 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvAddSpells;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn level;
-        private System.Windows.Forms.DataGridViewTextBoxColumn name;
-        private System.Windows.Forms.DataGridViewButtonColumn action;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvPreparedSpells;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
         private System.Windows.Forms.DataGridView dgvSpellbook;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn asId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn asLevel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn asName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn asAction;
+        private System.Windows.Forms.DataGridViewTextBoxColumn psId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn psNivel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn psNombre;
+        private System.Windows.Forms.DataGridViewButtonColumn psAction;
     }
 }

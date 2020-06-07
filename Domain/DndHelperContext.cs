@@ -23,11 +23,15 @@ namespace Domain
         public DbSet<Race> Races { get; set; }
 
         public DbSet<Spell> Spells { get; set; }
+        public DbSet<CharacterPreparedSpell> CharacterPreparedSpells { get; set; }
+        public DbSet<CharacterSpellbook> characterSpellbook { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             modelBuilder.Properties<DateTime>().Configure(c => c.HasColumnType("datetime2"));
+            modelBuilder.Entity<CharacterPreparedSpell>().HasKey(ps => new { ps.CharacterId, ps.SpellId });
+            modelBuilder.Entity<CharacterSpellbook>().HasKey(sb => new { sb.CharacterId, sb.SpellId });
         }
     }
 }

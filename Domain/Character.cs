@@ -32,7 +32,7 @@ namespace Domain
         public int Wisdom { get; set; }
         public int Charisma { get; set; }
 
-        public virtual ICollection<Spell> PreparedSpells { get; set; }
-        public virtual ICollection<Spell> Spellbook { get; set; }
+        public virtual IList<CharacterPreparedSpell> PreparedSpells { get; set; }
+        public virtual IList<CharacterSpellbook> Spellbook { get; set; }
     }
 }

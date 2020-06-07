@@ -1,7 +1,7 @@
-insert into 'User'(Username, Password, Created, Modified, Active)
+insert into [User](Username, Password, Created, Modified, Active)
 values ('Admin', 'a', getdate(), null, 1);
 
-insert into CharClass(Name, HitDice) VALUES ('Druid', '1d8');
+insert into CharClass(Name, HitDice) values ('Druid', 8);
 
 insert into Race(Name, Speed, Strength, Dexterity, Constitution, Intelligence, Wisdom, Charisma, SuperRace_ID)
 values ('Halfling', 25, 0, 2, 0, 0, 0, 0, null);

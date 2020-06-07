@@ -1,4 +1,5 @@
-﻿using Domain;
+﻿using Controllers;
+using Domain;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,8 @@ namespace Views.Characters
         List<Spell> preparedSpells = new List<Spell>();
         List<Spell> spellbook = new List<Spell>();
 
+        bool usesSpellbook = false;
+
         public ManageSpells()
         {
             InitializeComponent();
@@ -28,20 +31,49 @@ namespace Views.Characters
         public ManageSpells(Character character)
         {
             InitializeComponent();
-            this.character = character;
+            this.character = dbContext.Characters.SingleOrDefault(c => c.ID == character.ID);
         }
 
         private void ManageSpells_Load(object sender, EventArgs e)
         {
-            addSpells = dbContext.Spells.Where(x => x.Class.ID == character.Class.ID && x.Level <= character.Level).OrderBy(x => x.Level).ToList();
+            //spellbook = character.Class.Code == "WIZ";
+            FillSpellsInfo();
+        }
+
+        private void FillSpellsInfo()
+        {
+            character = dbContext.Characters.Find(character.ID);
+
+            addSpells = dbContext.Spells.Where(x => x.Class.ID == character.Class.ID && x.Level <= character.Level && x.Active == 1).OrderBy(x => x.Level).ToList();
             int c = 0;
+            dgvAddSpells.Rows.Clear();
             foreach (Spell spell in addSpells)
             {
                 dgvAddSpells.Rows.Add(spell.ID, spell.Level, spell.Name);
+                if (!character.PreparedSpells.Where(x => x.Spell.Active == 1).Select(ps => ps.Spell).Contains(spell))
+                {
+                    DataGridViewButtonCell dgvbc = new DataGridViewButtonCell();
+                    dgvbc.Value = "Agregar";
+                    dgvbc.Style.BackColor = SystemColors.Control;
+                    dgvAddSpells.Rows[c].Cells[3] = dgvbc;
+                }
+                else
+                {
+                    dgvAddSpells.Rows[c].Cells[3].Value = "Preparado";
+                }
+                c++;
+            }
+
+            preparedSpells = character.PreparedSpells.Where(x => x.Spell.Active == 1).Select(ps => ps.Spell).ToList();
+            c = 0;
+            dgvPreparedSpells.Rows.Clear();
+            foreach (Spell spell in preparedSpells)
+            {
+                dgvPreparedSpells.Rows.Add(spell.ID, spell.Level, spell.Name);
                 DataGridViewButtonCell dgvbc = new DataGridViewButtonCell();
-                dgvbc.Value = character.PreparedSpells.Contains(spell) ? "Listo" : "Agregar";
+                dgvbc.Value = "Remover";
                 dgvbc.Style.BackColor = SystemColors.Control;
-                dgvAddSpells.Rows[c].Cells[3] = dgvbc;
+                dgvPreparedSpells.Rows[c].Cells[3] = dgvbc;
                 c++;
             }
         }
@@ -50,8 +82,64 @@ namespace Views.Characters
         {
             if (e.ColumnIndex == 3)
             {
-                MessageBox.Show((e.RowIndex + 1) + "  Row  " + (e.ColumnIndex + 1) + "  Column button clicked ");
+                int selectedSpellId = (int) dgvAddSpells.Rows[e.RowIndex].Cells["asId"].Value;
+                addFromSpellList(selectedSpellId);
+                FillSpellsInfo();
             }
+        }
+
+        private void dgvPreparedSpells_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 3)
+            {
+                int selectedSpellId = (int)dgvPreparedSpells.Rows[e.RowIndex].Cells["psId"].Value;
+                removeFromPreparedSpells(selectedSpellId);
+                FillSpellsInfo();
+            }
+        }
+
+        private void addFromSpellList(int spellId)
+        {
+            Spell selectedSpell = addSpells.Find(s => s.ID == spellId);
+            if (!character.PreparedSpells.Where(x => x.Spell.Active == 1).Select(ps => ps.Spell).Contains(selectedSpell))
+            {
+                CharacterPreparedSpell preparedSpell = new CharacterPreparedSpell()
+                {
+                    Character = character,
+                    Spell = selectedSpell
+                };
+                dbContext.CharacterPreparedSpells.Add(preparedSpell);
+                dbContext.SaveChanges();
+            }
+        }
+
+        private void removeFromPreparedSpells(int spellId)
+        {
+            CharacterPreparedSpell preparedSpell = character.PreparedSpells.First(ps => ps.Spell.ID == spellId);
+            dbContext.CharacterPreparedSpells.Remove(preparedSpell);
+            dbContext.SaveChanges();
+        }
+
+        private void addFromSpellbook(int spellId)
+        {
+            Spell selectedSpell = spellbook.Find(s => s.ID == spellId);
+            if (!character.Spellbook.Where(x => x.Spell.Active == 1).Select(ps => ps.Spell).Contains(selectedSpell))
+            {
+                CharacterPreparedSpell preparedSpell = new CharacterPreparedSpell()
+                {
+                    Character = character,
+                    Spell = selectedSpell
+                };
+                dbContext.CharacterPreparedSpells.Add(preparedSpell);
+                dbContext.SaveChanges();
+            }
+        }
+
+        private void removeFromSpellbook(int spellId)
+        {
+            CharacterSpellbook bookSpell = character.Spellbook.First(ps => ps.Spell.ID == spellId);
+            dbContext.characterSpellbook.Remove(bookSpell);
+            dbContext.SaveChanges();
         }
     }
 }
