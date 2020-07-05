@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain", "Domain\Domain.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controllers", "Controllers\Controllers.csproj", "{78D1FA4A-2E7F-4B7C-8CBD-646D2152D922}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormsControlLibrary", "FormsControlLibrary\FormsControlLibrary.csproj", "{11F03EE9-7AE5-4D01-853F-DF57A5448612}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{78D1FA4A-2E7F-4B7C-8CBD-646D2152D922}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78D1FA4A-2E7F-4B7C-8CBD-646D2152D922}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78D1FA4A-2E7F-4B7C-8CBD-646D2152D922}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11F03EE9-7AE5-4D01-853F-DF57A5448612}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11F03EE9-7AE5-4D01-853F-DF57A5448612}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11F03EE9-7AE5-4D01-853F-DF57A5448612}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11F03EE9-7AE5-4D01-853F-DF57A5448612}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

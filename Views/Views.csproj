@@ -269,6 +269,9 @@
     <EmbeddedResource Include="Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -318,6 +321,10 @@
     <ProjectReference Include="..\Domain\Domain.csproj">
       <Project>{77c494ae-2a7e-4448-bdc1-3322fbb806b7}</Project>
       <Name>Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FormsControlLibrary\FormsControlLibrary.csproj">
+      <Project>{11f03ee9-7ae5-4d01-853f-df57a5448612}</Project>
+      <Name>FormsControlLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

@@ -36,7 +36,7 @@ namespace Views.Characters
 
         private void ManageSpells_Load(object sender, EventArgs e)
         {
-            //spellbook = character.Class.Code == "WIZ";
+            usesSpellbook = character.Class.Code == "WIZARD";
             FillSpellsInfo();
         }
 
